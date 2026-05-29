@@ -1,0 +1,56 @@
+<%@ page language="java" contentType="text/html" %>
+
+<html>
+<head>
+    <title>Employee Details</title>
+</head>
+<body>
+
+<%
+String id = request.getParameter("id");
+String name = request.getParameter("name");
+String dept = request.getParameter("dept");
+double salary = Double.parseDouble(request.getParameter("salary"));
+
+double bonus = salary * 0.10;
+double totalSalary = salary + bonus;
+%>
+
+<h2>Employee Information</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>Employee ID</th>
+    <td><%= id %></td>
+</tr>
+
+<tr>
+    <th>Employee Name</th>
+    <td><%= name %></td>
+</tr>
+
+<tr>
+    <th>Department</th>
+    <td><%= dept %></td>
+</tr>
+
+<tr>
+    <th>Basic Salary</th>
+    <td><%= salary %></td>
+</tr>
+
+<tr>
+    <th>Bonus (10%)</th>
+    <td><%= bonus %></td>
+</tr>
+
+<tr>
+    <th>Total Salary</th>
+    <td><%= totalSalary %></td>
+</tr>
+
+</table>
+
+</body>
+</html>
